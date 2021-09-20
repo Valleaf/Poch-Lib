@@ -2,40 +2,87 @@
 <html lang="fr">
 
 <head>
-	<title>Poch'Lib</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css"
-		href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" />
-	<link rel="stylesheet" type="text/css" href="src/main.css" />
+    <title>Poch'Lib</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" />
+    <link rel="stylesheet" type="text/css" href="src/main.css" />
 </head>
 
 <body>
 
 
-	<div id="myBooks" class="grid-x grid-padding-x align-center-middle text-center">
+    <div id="myBooks" class="grid-x grid-padding-x align-center-middle text-center">
+        <!-- SECTION HEADER -->
+        <div class="cell small-11 card-title">
+            <h3>Poch'Lib</h3>
+        </div>
 
-		<div class="cell card-title">
-			<h1>Poch'Lib</h1>
-		</div>
+        <!-- SECTION AJOUTER UN LIVRE -->
 
-		<div class="cell ">
-			<h2 class="h2">Nouveau Livre</h2>
-		</div>
-		<hr>
-		<div class="cell " id="content">
-			<h2>Ma poch'liste</h2>
-		</div>
-	</div>
+        <div class="cell">
+            <h2 class="h2">Nouveau Livre</h2>
+        </div>
+        <div class="cell">
+            <button class="button" onclick="addBook()">Ajouter un livre</button>
+        </div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0-rc.1/js/foundation.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
-	<script>
-		jQuery(document).ready(function ($) {
-			$(document).foundation();
-		});
-	</script>
+        <!-- SECTION FORMULAIRE -->
+        <form id="myForm" class="grid-x grid-padding-x align-center">
+
+
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                        <label>Titre du Livre
+							<input id="bookTitle" type="text" placeholder="Titre du Livre..." required>
+						</label>
+                    </div>
+                    <div class="small-12 cell">
+                        <label>Auteur
+							<input id="bookAuthor" type="text" placeholder="Auteur..." required>
+						</label>
+                    </div>
+                    <div class="grid-x align-left text-left">
+                        <div class="small-8 cell">
+                            <button onClick=" queryBooks() " class="button form-btn">Rechercher</input>
+						</div>
+						<div class="small-8 cell ">
+							<button type="reset" class="alert button form-btn">Annuler </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+        <div class="cell ">
+            <hr />
+        </div>
+
+
+        <!-- SECTION AFFICHAGE DES LIVRES -->
+        <div class="cell " id="content ">
+            <h2>Ma poch'liste</h2>
+        </div>
+        <div id="booksQueried" class="">
+
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0-rc.1/js/foundation.min.js "></script>
+    <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css " />
+    <script>
+        jQuery(document).ready(function($) {
+            $(document).foundation();
+        });
+    </script>
+    <script src="src/main.js " />
+
 </body>
 
 </html>

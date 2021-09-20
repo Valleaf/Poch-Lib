@@ -1,4 +1,35 @@
+body,
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: 0;
+    clear: both;
+    background-color: #000000;
+    height: 1px;
+}
+
+#myForm {
+    display: none;
+}
+
 .card-title {
-    background-color: grey;
-    margin: 1em 3em 1em 3em;
+    background-color: gainsboro;
+    margin: 2em;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
+    color: grey;
+}
+
+.button {
+    background-color: #23b6a8;
+    padding: 1em 3em;
+    border-radius: 7px;
+}
+
+.form-btn {
+    width: 100%;
+    margin: 1em;
 }
