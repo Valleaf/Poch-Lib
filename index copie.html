@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Foundation Starter Template</title>
+	<link rel="stylesheet" href="css/foundation.css" />
+</head>
+
+<body>
+	<h1>Hello, world!</h1>
+	<div class="slider" data-slider data-initial-start="50" data-end="200">
+		<span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
+		<span class="slider-fill" data-slider-fill></span>
+		<input type="hidden">
+	</div>
+	<ul class="dropdown menu" data-dropdown-menu>
+		<li>
+			<a href="#">Item 1</a>
+			<ul class="menu">
+				<li><a href="#">Item 1A</a></li>
+				<!-- ... -->
+			</ul>
+		</li>
+		<li><a href="#">Item 2</a></li>
+		<li><a href="#">Item 3</a></li>
+		<li><a href="#">Item 4</a></li>
+	</ul>
+
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/vendor/what-input.js"></script>
+	<script src="js/vendor/foundation.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+
+</body>
+
+</html>
