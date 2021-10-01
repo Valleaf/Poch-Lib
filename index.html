@@ -24,11 +24,11 @@
             <h2 class="h2">Nouveau Livre</h2>
         </div>
         <div class="cell">
-            <button class="button" onclick="addBook()">Ajouter un livre</button>
+            <button id="displayFormButton" class="button" onclick="addBook()">Ajouter un livre</button>
         </div>
 
         <!-- SECTION FORMULAIRE -->
-        <form id="myForm" class="grid-x grid-padding-x align-center" onsubmit="queryBooks()">
+        <form id="myForm" class="grid-x grid-padding-x align-center" onreset="removeForm()" onsubmit="queryBooks()">
 
 
             <div class="grid-container">
@@ -68,7 +68,7 @@
         <div class="cell " id="content ">
             <h2>Ma poch'liste</h2>
         </div>
-        <div id="booksQueried" class="">
+        <div id="booksQueried" class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-4">
 
         </div>
     </div>
