@@ -28,27 +28,29 @@
         </div>
 
         <!-- SECTION FORMULAIRE -->
-        <form id="myForm" class="grid-x grid-padding-x align-center">
+        <form id="myForm" class="grid-x grid-padding-x align-center" onsubmit="queryBooks()">
 
 
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div class="small-12 cell">
                         <label>Titre du Livre
-							<input id="bookTitle" type="text" placeholder="Titre du Livre..." required>
-						</label>
+                            <input name='bookTitle' id="bookTitle" type="text" placeholder="Titre du Livre..." required>
+                        </label>
                     </div>
                     <div class="small-12 cell">
                         <label>Auteur
-							<input id="bookAuthor" type="text" placeholder="Auteur..." required>
-						</label>
+                            <input name="bookAuthor" id="bookAuthor" type="text" placeholder="Auteur..." required>
+                        </label>
                     </div>
                     <div class="grid-x align-left text-left">
                         <div class="small-8 cell">
-                            <button onClick=" queryBooks() " class="button form-btn">Rechercher</input>
-						</div>
-						<div class="small-8 cell ">
-							<button type="reset" class="alert button form-btn">Annuler </button>
+                            <!-- <input class="button form-btn" value="Rechercher" /> -->
+                            <button class="button form-btn">Rechercher</input>
+                                <!-- onclick="queryBooks();" -->
+                        </div>
+                        <div class="small-8 cell ">
+                            <button type="reset" class="alert button form-btn">Annuler </button>
                         </div>
                     </div>
                 </div>
@@ -74,6 +76,7 @@
     <!-- SCRIPTS -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+    <script src='https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0-rc.1/js/foundation.min.js "></script>
     <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css " />
     <script>
