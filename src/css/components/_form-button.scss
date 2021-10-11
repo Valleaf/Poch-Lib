@@ -1,0 +1,14 @@
+.button {
+    background-color: $button-bg;
+    padding: 0.9em 1.8em;
+    border-radius: 7px;
+}
+
+.form-btn {
+    width: 200%;
+    @include mobile-only {
+        width: 100%;
+    }
+    ;
+    font-size: 0.8rem;
+}

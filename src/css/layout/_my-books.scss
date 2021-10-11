@@ -1,0 +1,9 @@
+#my-books {
+    display: grid;
+    place-items: center stretch;
+    // grid-template-columns: 1;
+    div {
+        text-align: center;
+        vertical-align: middle;
+    }
+}

@@ -1,0 +1,16 @@
+@mixin full-width {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}

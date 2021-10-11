@@ -1,0 +1,114 @@
+.header-title {
+  background-color: #eff0f3;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  color: grey;
+  width: auto;
+}
+
+.button {
+  background-color: #23b6a8;
+  padding: 0.9em 1.8em;
+  border-radius: 7px;
+}
+
+.form-btn {
+  width: 200%;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 641px) {
+  .form-btn {
+    width: 100%;
+  }
+}
+
+.label-add-book {
+  text-align: left;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+}
+
+.cancel-btn {
+  background-color: red;
+}
+
+.book-cover {
+  height: 30vh;
+}
+
+#myForm {
+  display: none;
+}
+
+#myForm div {
+  margin-bottom: 0.5em;
+}
+
+#myForm .buttons-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+#my-books {
+  display: -ms-grid;
+  display: grid;
+  place-items: center stretch;
+}
+
+#my-books div {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#booksQueried {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  -webkit-column-gap: 0.8em;
+          column-gap: 0.8em;
+  row-gap: 1em;
+  color: #000;
+  place-items: center;
+}
+
+@media screen and (max-width: 1224px) {
+  #booksQueried {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 641px) {
+  #booksQueried {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+}
+
+.book-thumbnail-card {
+  height: 100%;
+  border: 11px solid #000000;
+}
+
+body,
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 1em;
+  font-family: 'Roboto Slab', serif;
+  overflow-x: hidden;
+}
+/*# sourceMappingURL=main.css.map */
