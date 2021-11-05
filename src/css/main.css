@@ -6,6 +6,10 @@
   width: auto;
 }
 
+.section-title {
+  margin: 1em;
+}
+
 .button {
   background-color: #23b6a8;
   padding: 0.9em 1.8em;
@@ -33,7 +37,7 @@
 }
 
 .cancel-btn {
-  background-color: red;
+  background-color: #df5a4b;
 }
 
 .book-cover {
@@ -64,11 +68,12 @@
   display: -ms-grid;
   display: grid;
   place-items: center stretch;
-}
-
-#my-books div {
   text-align: center;
   vertical-align: middle;
+}
+
+#js-search-results {
+  display: none;
 }
 
 #booksQueried {
@@ -78,7 +83,7 @@
       grid-template-columns: auto auto auto auto;
   -webkit-column-gap: 0.8em;
           column-gap: 0.8em;
-  row-gap: 1em;
+  row-gap: 3em;
   color: #000;
   place-items: center;
 }
@@ -99,7 +104,17 @@
 
 .book-thumbnail-card {
   height: 100%;
-  border: 11px solid #000000;
+  border: 4px solid #000000;
+  background-color: #e0e0e0;
+  padding: 0.5em;
+}
+
+.book-thumbnail-card div {
+  text-align: left;
+}
+
+#js-stored-list {
+  display: none;
 }
 
 body,
@@ -110,5 +125,9 @@ html {
   padding: 1em;
   font-family: 'Roboto Slab', serif;
   overflow-x: hidden;
+}
+
+.cell {
+  margin-top: 1em;
 }
 /*# sourceMappingURL=main.css.map */
