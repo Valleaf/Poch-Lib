@@ -3,22 +3,28 @@
 }
 
 #booksQueried {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    @include tablet-only {
-        grid-template-columns: auto auto;
-    }
-    @include mobile-only {
-        grid-template-columns: auto;
-    }
-    column-gap: 0.8em;
-    row-gap: 3em;
-    color: #000;
-    place-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
 }
 
+
+
 .book-thumbnail-card {
-    height: 100%;
+    margin: 1em;
+    width: 25vw;
+    height: 45vh;
+    @include tablet-only {
+        // height: 45vh;
+        width: 40vw;
+    }
+    @include mobile-only {
+        // height: 45vh;
+        width: 75vw;
+    }
     border: 4px solid #000000;
     background-color: $card-result-bg;
     padding: 0.5em;

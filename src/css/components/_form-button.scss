@@ -6,6 +6,9 @@
 
 .form-btn {
     width: 200%;
+    @include tablet-only {
+        width: 150%;
+    }
     @include mobile-only {
         width: 100%;
     }
