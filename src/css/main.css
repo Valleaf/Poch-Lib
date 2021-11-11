@@ -17,19 +17,19 @@
 }
 
 .form-btn {
-  width: 200%;
+  width: 100%;
   font-size: 0.8rem;
 }
 
-@media screen and (min-width: 1199px) {
+@media screen and (min-width: 768px) {
   .form-btn {
     width: 150%;
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1199px) {
   .form-btn {
-    width: 100%;
+    width: 200%;
   }
 }
 
@@ -116,22 +116,22 @@
 
 .book-thumbnail-card {
   margin: 1em;
-  width: 25vw;
+  width: 80vw;
   height: 45vh;
   border: 4px solid #000000;
   background-color: #e0e0e0;
   padding: 0.5em;
 }
 
-@media screen and (min-width: 1199px) {
+@media screen and (min-width: 768px) {
   .book-thumbnail-card {
-    width: 40vw;
+    width: 35vw;
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1199px) {
   .book-thumbnail-card {
-    width: 75vw;
+    width: 25vw;
   }
 }
 
