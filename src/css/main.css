@@ -6,10 +6,6 @@
   width: auto;
 }
 
-.section-title {
-  margin: 1em;
-}
-
 .button {
   background-color: #23b6a8;
   padding: 0.9em 1.8em;
@@ -17,6 +13,7 @@
 }
 
 .form-btn {
+  margin-top: 1em;
   width: 100%;
   font-size: 0.8rem;
 }
@@ -27,7 +24,7 @@
   }
 }
 
-@media screen and (min-width: 1199px) {
+@media screen and (min-width: 1919px) {
   .form-btn {
     width: 200%;
   }
@@ -46,8 +43,90 @@
   background-color: #df5a4b;
 }
 
+.book-thumbnail-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flag-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 0 auto;
+}
+
+.book-thumbnail-footer {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* align horizontal */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* align vertical */
+  min-height: 0px;
+}
+
 .book-cover {
-  height: 50%;
+  max-height: 100%;
+  width: 50%;
+  max-width: 100%;
+}
+
+.book-thumbnail-card {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: none;
+      flex-wrap: none;
+  margin: 1em;
+  width: 80vw;
+  height: 45vh;
+  border: 4px solid #000000;
+  background-color: #e0e0e0;
+  padding: 0.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .book-thumbnail-card {
+    max-width: calc(40% - 2em);
+  }
+}
+
+@media screen and (min-width: 1919px) {
+  .book-thumbnail-card {
+    width: calc(25% - 2em);
+  }
+}
+
+.book-thumbnail-card div {
+  text-align: left;
+}
+
+.book-thumbnail-card .title-card {
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
 #myForm {
@@ -71,11 +150,15 @@
 }
 
 #my-books {
-  display: -ms-grid;
-  display: grid;
-  place-items: center stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
   text-align: center;
-  vertical-align: middle;
 }
 
 #pochlist {
@@ -114,31 +197,6 @@
   vertical-align: middle;
 }
 
-.book-thumbnail-card {
-  margin: 1em;
-  width: 80vw;
-  height: 45vh;
-  border: 4px solid #000000;
-  background-color: #e0e0e0;
-  padding: 0.5em;
-}
-
-@media screen and (min-width: 768px) {
-  .book-thumbnail-card {
-    width: 35vw;
-  }
-}
-
-@media screen and (min-width: 1199px) {
-  .book-thumbnail-card {
-    width: 25vw;
-  }
-}
-
-.book-thumbnail-card div {
-  text-align: left;
-}
-
 #js-stored-list {
   display: none;
 }
@@ -151,9 +209,5 @@ html {
   padding: 1em;
   font-family: 'Roboto Slab', serif;
   overflow-x: hidden;
-}
-
-.cell {
-  margin-top: 1em;
 }
 /*# sourceMappingURL=main.css.map */

@@ -66,12 +66,12 @@ const addBookToList = (e) => {
         if (library == '') {
             library = idString;
         } else {
-            library = library + ',' + idString;
+            library = library + ' ' + idString;
         }
 
         // Replace the bookmark icon with a remove icon
         //  Replace the addBookToList function with the removeBookFromList function
-         element = element.replace('class="fas fa-bookmark"', 'class="fas fa-trash"')
+         element = element.replace('class="fas fa-bookmark flag-card"', 'class="fas fa-trash flag-card"')
                           .replace('addBookToList', 'removeBookFromList');
         sessionStorage.setItem("pochlist", library);
         sessionStorage.setItem(idString, element);
@@ -86,7 +86,9 @@ const addBookToList = (e) => {
 const removeBookFromList = (e) => {
     let library = sessionStorage.getItem("pochlist");
     let idString = e.parentNode.parentNode.outerHTML.match(/Id : \w+<\/div>/g).toString().match(/\w{4,}/);
-    library = library.replace(idString, '');
+    library = library.replace(idString , '')
+                     .replace(/  / , ' ')
+                     .trim();
     sessionStorage.setItem("pochlist", library);
     sessionStorage.removeItem(idString);
     displayPochList();
@@ -100,6 +102,7 @@ const removeBookFromList = (e) => {
      */
 const displayPochList = () => {
     //TODO: Display only if books are in
+    //clean library and books, if there is a coma
     if(sessionStorage.getItem("pochlist") != null){
 
     document.getElementById("js-stored-list").style.display = "block";
@@ -109,14 +112,16 @@ const displayPochList = () => {
     let src = document.getElementById("pochlist");
     src.innerHTML = '';
     let div = document.createElement("div");
-    let books = sessionStorage.getItem("pochlist").split(',');
+    let books = sessionStorage.getItem("pochlist").split(' ');
     console.log('books' + books);
     books.forEach(e => {
+        if(e != ''){
         let bookThumbnail = sessionStorage.getItem(e);
         console.log('bookThumbnail ' + bookThumbnail);
         let book = document.createElement("div");
         book.innerHTML = bookThumbnail;
-        src.appendChild(book);
+        src.innerHTML+=bookThumbnail;
+        }
     });
     }
 }
@@ -142,34 +147,37 @@ class HandleList {
         let div = document.createElement("div");
         div.className = "book-thumbnail-card";
         //Append the title, id, author, Description and then the img
-        let card = document.createElement("div");
-        card.className = "card";
+
+        let header = document.createElement("div");
+        header.className = "book-thumbnail-element book-thumbnail-header";
         let title = document.createElement("div");
-        title.className = "card-section h4";
+        title.className = "card-section title-card h4";
         title.innerText = "Titre : " + this.element.volumeInfo.title;
-        card.appendChild(title);
+        header.appendChild(title);
         let flag = document.createElement("span");
-        flag.className ="fas fa-bookmark";
+        flag.className ="fas fa-bookmark flag-card";
         flag.setAttribute("onclick", "addBookToList(this)");
         // flag.addEventListener("click", addBookToList());
-        card.appendChild(flag);
-        //TODO: APPEND FLAG HERE
+        header.appendChild(flag);
+        div.appendChild(header);
         let id = document.createElement("div");
-        id.className = "card-section h4";
+        id.className = "book-thumbnail-element card-section id-card h4";
         id.innerText = "Id : " + this.element.id;
-        card.appendChild(id);
+        div.appendChild(id);
         let authors = document.createElement("div");
-        authors.className = "card-section h4";
+        authors.className = "book-thumbnail-element card-section author-card h4";
         authors.innerText = "Auteurs : " + this.element.volumeInfo.authors.join(',', ' ');
-        card.appendChild(authors);
+        div.appendChild(authors);
         let description = document.createElement("div");
-        description.className = "card-section h4";
+        description.className = "book-thumbnail-description card-section description-card h4";
         if(this.element.volumeInfo.description)
         description.innerText = "Description : " + this.truncateString(this.element.volumeInfo.description, 100);
         else
-        description.innerText = "Description : Aucune description disponible";
-        card.appendChild(description);
+        description.innerText = "Description : Aucune description disponible pour cet ouvrage à l'heure actuelle.";
+        div.appendChild(description);
+        let imgContainer = document.createElement("div");
         let img = document.createElement("img");
+        imgContainer.className = 'book-thumbnail-element book-thumbnail-footer';
         img.className = 'book-cover';
         //If there is no thumbnail available, use the default image
         if (this.element.volumeInfo.imageLinks) {
@@ -178,8 +186,8 @@ class HandleList {
             // img.src = this.element.volumeInfo.imageLinks.thumbnail.replace('&zoom=1&', '&zoom=0&');
         } else img.src = "src/img/unavailable.png";
         //Append the img to the div and return it
-        div.appendChild(card);
-        div.appendChild(img);
+        imgContainer.appendChild(img);
+        div.appendChild(imgContainer);
         return div;
     }
 

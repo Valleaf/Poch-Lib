@@ -1,9 +1,8 @@
 #my-books {
-    display: grid;
-    place-items: center stretch;
-    // grid-template-columns: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
     text-align: center;
-    vertical-align: middle;
 }
 
 #pochlist  //display list in a flex with 2 per line for mobile, 3 for tablet and 4 for desktops 
