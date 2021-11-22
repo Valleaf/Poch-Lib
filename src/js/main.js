@@ -245,9 +245,7 @@ class HandleList {
     img.className = "book-cover";
     //If there is no thumbnail available, use the default image
     if (this.element.volumeInfo.imageLinks) {
-      //HQ Cover but less availability
       img.src = this.element.volumeInfo.imageLinks.thumbnail;
-      // img.src = this.element.volumeInfo.imageLinks.thumbnail.replace('&zoom=1&', '&zoom=0&');
     } else img.src = "src/img/unavailable.png";
     //Append the img to the div and return it
     imgContainer.appendChild(img);
