@@ -38,7 +38,8 @@ const queryBooks = async () => {
   const queryResponse = await response.json();
   console.log(queryResponse);
   if (queryResponse.totalItems == 0) {
-    alert("Aucun livre n’ a été trouvé");
+    alert("Aucun livre n’a été trouvé");
+    return;
   }
   // If books are found, display them
   let items = queryResponse.items;
