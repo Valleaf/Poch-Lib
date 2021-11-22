@@ -1,0 +1,12 @@
+#booksQueried {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 0.8em;
+  row-gap: 1em;
+  place-items: center;
+}
+
+.book-thumbnail-card {
+  height: 100%;
+  border: 11px solid #000000;
+}

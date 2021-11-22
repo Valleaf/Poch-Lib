@@ -1,0 +1,24 @@
+.flag-card{
+    display: flex;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+}
+//On hover, translates the element slightly and changes the background color of the card
+.flag-card:hover{
+    -webkit-transform: translate(0px, -10px);
+    -moz-transform: translate(0px, -10px);
+    -o-transform: translate(0px, -10px);
+    -ms-transform: translate(0px, -10px);
+    transform: translate(0px, -10px);
+    transition: all 0.5s ease-in-out;
+    background-color: #e6e6e6;
+}
+.flag-card:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+  }

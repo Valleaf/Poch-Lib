@@ -1,0 +1,42 @@
+ //display list in a flex with 1 per line for mobile, 2 for tablet and 4 for desktops
+.book-thumbnail-card {
+  text-overflow: ellipsis;
+  display: flex;
+  min-height: 0px;
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: none;
+  margin: 1em;
+  width: 80vw;
+  height: 45vh;
+  @include tablet-only {
+    max-width: calc(47% - 2em);
+  }
+  @include desktop-only {
+    width: calc(23% - 2em);
+  }
+  border: 4px solid #000000;
+  background-color: $card-result-bg;
+  padding: 0.5em;
+  div {
+    text-align: left;
+  }
+}
+
+.book-thumbnail-header {
+  display: flex;
+  flex-direction: row;
+}
+.book-thumbnail-footer {
+  flex-grow: 2;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  min-height: 0px;
+}
+
+.title-card {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}

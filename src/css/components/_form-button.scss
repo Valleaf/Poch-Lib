@@ -1,0 +1,18 @@
+.button {
+    background-color: $button-bg;
+    padding: 0.9em 1.8em;
+    border-radius: 7px;
+}
+
+.form-btn {
+    margin-top: 1em;
+    width: 100%;
+    @include tablet-only {
+        width: 150%;
+    }
+    @include desktop-only {
+        width: 200%;
+    }
+    ;
+    font-size: 0.8rem;
+}

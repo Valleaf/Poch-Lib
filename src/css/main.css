@@ -1,0 +1,321 @@
+.header-title {
+  background-color: #eff0f3;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  color: grey;
+  width: 98%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.button {
+  background-color: #23b6a8;
+  padding: 0.9em 1.8em;
+  border-radius: 7px;
+}
+
+.form-btn {
+  margin-top: 1em;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .form-btn {
+    width: 150%;
+  }
+}
+
+@media screen and (min-width: 1919px) {
+  .form-btn {
+    width: 200%;
+  }
+}
+
+.label-add-book {
+  text-align: left;
+  display: block;
+}
+
+.form-input {
+  width: 98%;
+}
+
+.cancel-btn {
+  background-color: #df5a4b;
+}
+
+.flag-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+}
+
+.flag-card:hover {
+  -webkit-transform: translate(0px, -10px);
+  transform: translate(0px, -10px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: #e6e6e6;
+}
+
+.flag-card:active:after {
+  -webkit-box-shadow: 0 0 0 0 white;
+          box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.book-cover {
+  max-height: 100%;
+  width: 50%;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#myForm {
+  display: none;
+}
+
+#myForm div {
+  margin-bottom: 0.5em;
+}
+
+#myForm .buttons-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+#my-books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.8em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+#js-search-results {
+  display: none;
+}
+
+#js-stored-list {
+  display: none;
+}
+
+#booksQueried {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#pochlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden;
+  /* Hidden by default. Visible on click */
+  min-width: 250px;
+  /* Set a default minimum width */
+  margin-left: -125px;
+  /* Divide value of min-width by 2 */
+  background-color: #333;
+  /* Black background color */
+  color: #fff;
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  left: 50%;
+  /* Center the snackbar */
+  bottom: 30px;
+  /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+      However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+.book-thumbnail-card {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: none;
+      flex-wrap: none;
+  margin: 1em;
+  width: 80vw;
+  height: 45vh;
+  border: 4px solid #000000;
+  background-color: #e0e0e0;
+  padding: 0.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .book-thumbnail-card {
+    max-width: calc(47% - 2em);
+  }
+}
+
+@media screen and (min-width: 1919px) {
+  .book-thumbnail-card {
+    width: calc(23% - 2em);
+  }
+}
+
+.book-thumbnail-card div {
+  text-align: left;
+}
+
+.book-thumbnail-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.book-thumbnail-footer {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* align horizontal */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* align vertical */
+  min-height: 0px;
+}
+
+.title-card {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+body,
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  overflow-x: hidden;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,11 @@
+#myForm {
+    display: none;
+    div {
+        margin-bottom: 0.5em;
+    }
+    .buttons-form {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: flex-start;
+    }
+}
