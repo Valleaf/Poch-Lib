@@ -5,9 +5,12 @@
 @import "./components/form-label";
 @import "./components/form-input";
 @import "./components/cancel-button";
-@import "./components/book-thumbnail";
+@import "./components/flag";
+@import "./components/book-cover";
 @import "./layout/add-form";
 @import "./layout/my-books";
 @import "./layout/query-display";
+@import "./layout/pochlist";
+@import "./layout/snackbar";
+@import "./layout/book-thumbnail-card";
 @import "./base/base";
-//TODO: MEME TAILLE DES COLONNES -- UTILISER FLEXBOX

@@ -3,7 +3,10 @@
   -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   color: grey;
-  width: auto;
+  width: 98%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .button {
@@ -36,21 +39,11 @@
 }
 
 .form-input {
-  width: 100%;
+  width: 98%;
 }
 
 .cancel-btn {
   background-color: #df5a4b;
-}
-
-.book-thumbnail-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .flag-card {
@@ -64,6 +57,8 @@
 .flag-card:hover {
   -webkit-transform: translate(0px, -10px);
   transform: translate(0px, -10px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background-color: #e6e6e6;
 }
 
@@ -79,106 +74,84 @@
   transition: 0s;
 }
 
-.book-thumbnail-header {
-  -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
-}
-
-.book-thumbnail-header-img {
-  width: 100%;
-  height: 100%;
-}
-
-.book-thumbnail-header-title {
-  margin: 0 0 0 auto;
-}
-
-.book-thumbnail-header-title-text {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  text-align: center;
-}
-
-.book-thumbnail-header-title-author {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.8em;
-  font-weight: bold;
-  text-align: center;
-}
-
-.book-thumbnail-header-title-author-img {
-  width: 100%;
-  height: 100%;
-}
-
-.book-thumbnail-footer {
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
-  margin-top: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  /* align horizontal */
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /* align vertical */
-  min-height: 0px;
-}
-
 .book-cover {
   max-height: 100%;
   width: 50%;
   max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-.book-thumbnail-card {
-  text-overflow: ellipsis;
+#myForm {
+  display: none;
+}
+
+#myForm div {
+  margin-bottom: 0.5em;
+}
+
+#myForm .buttons-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+#my-books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.8em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -ms-flex-wrap: none;
-      flex-wrap: none;
-  margin: 1em;
-  width: 80vw;
-  height: 45vh;
-  border: 4px solid #000000;
-  background-color: #e0e0e0;
-  padding: 0.5em;
+  text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  .book-thumbnail-card {
-    max-width: calc(40% - 2em);
-  }
+#js-search-results {
+  display: none;
 }
 
-@media screen and (min-width: 1919px) {
-  .book-thumbnail-card {
-    width: calc(25% - 2em);
-  }
+#js-stored-list {
+  display: none;
 }
 
-.book-thumbnail-card div {
-  text-align: left;
+#booksQueried {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.book-thumbnail-card .title-card {
-  font-weight: bold;
-  margin-bottom: 0.5em;
+#pochlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  vertical-align: middle;
 }
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
@@ -214,7 +187,7 @@
   visibility: visible;
   /* Show the snackbar */
   /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-    However, delay the fade out process for 2.5 seconds */
+      However, delay the fade out process for 2.5 seconds */
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
@@ -264,77 +237,77 @@
   }
 }
 
-#myForm {
-  display: none;
-}
-
-#myForm div {
-  margin-bottom: 0.5em;
-}
-
-#myForm .buttons-form {
+.book-thumbnail-card {
+  text-overflow: ellipsis;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-}
-
-#my-books {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0.5em;
+  min-height: 0px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100vw;
-  text-align: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: none;
+      flex-wrap: none;
+  margin: 1em;
+  width: 80vw;
+  height: 45vh;
+  border: 4px solid #000000;
+  background-color: #e0e0e0;
+  padding: 0.5em;
 }
 
-#pochlist {
+@media screen and (min-width: 768px) {
+  .book-thumbnail-card {
+    max-width: calc(47% - 2em);
+  }
+}
+
+@media screen and (min-width: 1919px) {
+  .book-thumbnail-card {
+    width: calc(23% - 2em);
+  }
+}
+
+.book-thumbnail-card div {
+  text-align: left;
+}
+
+.book-thumbnail-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  vertical-align: middle;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-#js-search-results {
-  display: none;
-}
-
-#booksQueried {
+.book-thumbnail-footer {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  /* align horizontal */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
-  vertical-align: middle;
+  /* align vertical */
+  min-height: 0px;
 }
 
-#js-stored-list {
-  display: none;
+.title-card {
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
 body,

@@ -124,6 +124,10 @@ const removeBookFromList = (e) => {
   displayPochList();
 };
 
+/**
+ * Displays a toast on the page for 3 seconds
+ * @param {String} message Message to display
+ */
 function displayToast(text) {
     // Get the snackbar DIV
     let x = document.getElementById("snackbar");
@@ -165,6 +169,7 @@ const displayPochList = () => {
 
 /**
  * This class handles the creation of the book thumbnails and the search results
+ * @param {DOM element} element
  */
 class HandleList {
   constructor(element) {
@@ -180,6 +185,8 @@ class HandleList {
   }
   /**
    * Creates a thumbnail containing all the information needed
+   * @returns {DOM element} thumbnail
+   * @memberof HandleList
    */
   createThumbnail = () => {
     //Initialise a div containing all the information
@@ -247,6 +254,15 @@ class HandleList {
     return div;
   };
 
+    /**
+     * Truncates a string if it is too long
+     * @param {string} str String to truncate
+     * @param {number} maxLength Maximum length of the string
+     * @returns {string} Truncated string
+     * @example
+     * truncateString("Hello world", 5) // "Hello"
+     * truncateString("Hello world", 10) // "Hello world"
+        */
   truncateString(str, num) {
     if (str.length <= num) {
       return str;
