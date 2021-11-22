@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
+<!-- HEADER SECTION -->
 
 <head>
     <title>Poch'Lib</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT IMPORT : ROBOTO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <!-- CSS IMPORT -->
     <link rel="stylesheet" type="text/css" href="src/css/main.css" />
 </head>
 
@@ -19,7 +22,7 @@
             <h3>Poch'Lib</h3>
         </div>
 
-        <!-- FORM-SEARCH BOOK -->
+        <!-- FORM-SECTION -->
 
         <div>
             <h2 class="h2">Nouveau livre</h2>
@@ -28,19 +31,18 @@
             <button id="displayFormButton" class="button" onclick="addBook()">Ajouter un livre</button>
         </div>
 
-        <!-- SECTION FORMULAIRE -->
+        <!-- QUERY FORM -->
         <form id="myForm" onreset="removeForm()" onsubmit="queryBooks()">
-
-
-
+            <!-- TITLE INPUT -->
             <label for="bookTitle" class="label-add-book">Titre du livre </label>
-
             <input class="form-input" name='bookTitle' id="bookTitle" type="text" placeholder="Titre du Livre..."
                 required />
 
+            <!-- AUTHOR INPUT -->
             <label for="bookAuthor" class="label-add-book">Auteur </label>
             <input class="form-input" name="bookAuthor" id="bookAuthor" type="text" placeholder="Auteur..." required />
 
+            <!-- FORM BUTTONS -->
             <div class="buttons-form ">
                 <div>
                     <button class="button form-btn">Rechercher</input>
@@ -49,10 +51,9 @@
                     <button type="reset" class="cancel-btn button form-btn">Annuler </button>
                 </div>
             </div>
-
         </form>
 
-        <!-- SECTION RESULTAT -->
+        <!-- RESULTS SECTION  -->
         <div id="js-search-results">
             <hr />
             <h2>Résultats de Recherche</h2>
@@ -61,8 +62,7 @@
             </div>
         </div>
 
-
-        <!-- SECTION AFFICHAGE DES LIVRES -->
+        <!-- POCHLIST SECTION -->
         <div id="js-stored-list">
             <hr />
             <h2>Ma poch'liste</h2>
@@ -70,12 +70,16 @@
         <div id="pochlist">
         </div>
     </div>
-
+    <div id="snackbar">Some text some message..</div> 
     <!-- SCRIPTS -->
+    <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
     <script src='https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js'></script>
+    <!-- FONT AWESOME ICONS -->
     <script src="https://kit.fontawesome.com/08d36f320f.js" crossorigin="anonymous"></script>
+    <!-- JS SCRIPTS -->
     <script src="src/js/main.js"></script>
+    <!-- INTIALIZE POCHLIST DISPLAY ON LOAD -->
     <script type="text/javascript">
         $(document).ready(function () {
             displayPochList();
